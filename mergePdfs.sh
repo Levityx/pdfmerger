@@ -2,6 +2,8 @@
 #
 # Script to extract given page of all pdfs within a folder and merge together in alphabetical order.
 #
+# Usage: sh mergePdfs.sh
+#
 # 1) Put all the pdfs in folder $fullPdf (check format below)
 # 2) All first pages will be in $firstPages
 # 3) All first pages (in alphabetical order) are merge in $mergeall
@@ -9,10 +11,10 @@
 # Format expected: %d*_p%d*_.*.pdf
 # 	- The first integer easily defines the order of the documents
 # 	- The integer given after _p defines the page to extract. If none, page=1 selected
-# 	- 
-#  	Ex: if folder containes the following files 
-#		01_p1_Moore_etal_EH11.pdf
-# 		15_Fullgrabe_etal_IJA10b.pdf
+# 	
+#  	Ex: if folder $fullPdf contains the following files 
+#		01_p1_Moore et al EH11.pdf
+# 		15_Fullgrabe et al IJA10b.pdf
 # 		16_p2_Stone_etal_JASA10.pdf
 # 	then the first pages of pdfs nuber 01 and 15 are extracted, and second page of number 16
 #
