@@ -25,6 +25,7 @@ mergepdf="/Users/pmaal/mergepdfs/pdfmerger"
 fullPdf="$mergepdf/1_fullPdf"
 firstPages="$mergepdf/2_firstPages"
 mergeall="$mergepdf/3_mergeall"
+mergedpdf="$mergeall/allFirstpages.pdf"
 
 # 1 -> 2 	 Getting first page of all files
 # Complex loop to allow spaces in the names of pdfs
@@ -50,7 +51,12 @@ done
 listFirstPages=`find $firstPages -name *.pdf |  tr '\n' ' '`
 
 # 2 -> 3 	Merging
-pdfunite $listFirstPages "$mergeall/allFirstpages.pdf"
+pdfunite $listFirstPages $mergedpdf
+if [ $? = 0 ]; then 
+	echo "Files successfully merged into $mergedpdf. Check for safety all the pages you want are there."
+else
+	echo "pdfunite was not properly executed."
+fi
 
 exit 0
 
