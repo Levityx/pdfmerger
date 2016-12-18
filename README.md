@@ -9,7 +9,7 @@ You need to redefine the paths in the beginning of script mergePdfs.sh
 Format of pdfs in file $fullPdf: 
 * End with .pdf
 * Start with an integer to order them
-* Can start with %d*_p%d*_ to define which page should be extracted right after 'p'.
+* Can start with ```%d*_p%d*_``` to define which page should be extracted right after ```p```.
 
 Ex: 
 01_p1_Moore et al EH11.pdf
